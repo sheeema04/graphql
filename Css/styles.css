@@ -1,9 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #0f0f0f;
-  color: #0ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,59 +17,75 @@ body {
 }
 
 .login-container {
-  background: #111;
-  padding: 2rem;
-  border: 2px solid #0ff;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #0ff;
-  width: 300px;
-  text-align: center;
-  margin-top: 115px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  padding: 70px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 60px violet,
+    inset -20px 0 60px blue,
+    inset 20px 0 300px violet,
+    inset -20px 0 300px blue,
+    0 0 50px #fff,
+    -10px 0 60px violet,
+    10px 0 60px blue;
+  z-index: 0;
+  animation: float 4s ease-in-out infinite; 
+}
+
+@keyframes float {
+  0%   { transform: translate(-50%, -50%) translate(0px, 0px); }
+  25%  { transform: translate(-50%, -50%) translate(2px, -1px); }
+  50%  { transform: translate(-50%, -50%) translate(-2px, 1px); }
+  75%  { transform: translate(-50%, -50%) translate(2px, 3px); }
+  100% { transform: translate(-50%, -50%) translate(0px, 0px); }
 }
 
 .login-container h1 {
-  margin-bottom: 1.5rem;
-  color: #0ff;
-  text-shadow: 0 0 8px #0ff;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  font-family: Cursive;
+  font-size: 40px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 1rem;
-  border: none;
-  border-bottom: 2px solid #0ff;
-  background: transparent;
-  color: #0ff;
-  font-size: 16px;
-}
-
-input:focus {
-  outline: none;
-  border-bottom: 2px solid #f0f;
+  border: 2px solid rgb(155, 91, 155);
+  color: rgb(163, 46, 163);
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  background: transparent;
-  color: #0ff;
-  border: 2px solid #0ff;
+  background-color: violet;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s;
-  width: 50%;
 }
 
 button:hover {
-  background: #0ff;
-  color: #000;
+  background-color: #57346e;
+  font-weight: bold;
+  color: white;
 }
 
 #error-message {
-  margin-top: 1rem;
+  margin-top: 10px;
   color: #f55;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .header {
@@ -72,10 +93,9 @@ button:hover {
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
-  border-bottom: 2px solid #0ff;
-  color: #0ff;
+  border-bottom: 2px solid violet;
+  color: violet;
   width: 85%;
-  /* text-align: center; */
 }
 
 #profile-info p {
@@ -99,9 +119,17 @@ button:hover {
   max-width: 900px;
   margin: 0 auto 40px auto;
   padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(238, 130, 238, 0.3);
   border-radius: 12px;
-  background-color: #1a1a1a;
+  background-color: #1b1b1f;
+}
+
+.wide h2 {
+  text-align: center;
+  color: violet;
+  font-size: 24px;
+  text-shadow: 0 0 6px #fff;
+  margin-bottom: 10px;
 }
 
 #graphs {
@@ -110,28 +138,30 @@ button:hover {
   justify-content: center;
   gap: 20px;
   padding: 30px;
+
+  align-items: center;
+  margin: 30px auto;
 }
 
 .header button:hover {
-  background: #0ff;
+  background: violet;
   color: #000;
 }
 
 button#logout-btn {
   background-color: transparent;
   width: 150px;
-  color: #0ff;
+  color: violet;
   font-weight: bold;
-  border: 2px solid #0ff;
+  border: 2px solid violet;
   cursor: pointer;
-
   margin-top: 15px;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 button#logout-btn:hover {
-  background-color: rgb(0, 70, 70);
+  background-color: #4b0082;
   color: white;
 }
 
@@ -143,7 +173,7 @@ button#logout-btn:hover {
 }
 
 .level-chart h3 {
-  color: #0ff;
+  color: violet;
   margin-bottom: 1rem;
 }
 
@@ -154,7 +184,7 @@ button#logout-btn:hover {
 
 .level-text {
   font-size: 28px;
-  fill: #0ff;
+  fill: violet;
   font-weight: bold;
 }
 
@@ -165,7 +195,7 @@ button#logout-btn:hover {
 }
 
 .level-fg {
-  stroke: #0ff;
+  stroke: violet;
   stroke-width: 10;
   fill: none;
   transition: stroke-dashoffset 0.4s ease;
@@ -173,12 +203,19 @@ button#logout-btn:hover {
 
 /* SKILLS */
 #skills-graph {
-  background-color: #1a1a1a;
+  background-color: #1b1b1f;
   border-radius: 12px;
   margin: 20px auto;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(238, 130, 238, 0.3);
   text-align: center;
   transition: transform 0.2s ease-in-out;
+}
+
+.skills-heading {
+  color: rgb(128, 33, 128);
+  font-size: 28px;
+  padding-right: 720px;
+  font-family: emoji;
 }
 
 #skills-graph:hover {
@@ -193,18 +230,18 @@ button#logout-btn:hover {
 }
 
 polygon {
-  fill: rgba(173, 216, 230, 0.3);
-  stroke: #00bcd4;
+  fill: rgba(238, 130, 238, 0.2);
+  stroke: violet;
   stroke-width: 2;
 }
 
 line {
-  stroke: #333;
+  stroke: #555;
   stroke-width: 1;
 }
 
 circle {
-  stroke: #444;
+  stroke: #777;
   stroke-width: 1;
   fill: none;
 }
@@ -222,7 +259,6 @@ circle {
   font-size: 1.2rem;
 }
 
-/* SVG Styles */
 .level-svg {
   width: 200px;
   height: 220px;
@@ -230,20 +266,17 @@ circle {
 
 .level-bg-circle {
   fill: none;
-  stroke: #2d3748;
-  /* Dark gray background */
+  stroke: #292936;
   stroke-width: 12;
 }
 
 .level-progress-circle {
   fill: none;
-  stroke: #38b2ac;
-  /* Teal progress color */
+  stroke: #da70d6;
   stroke-width: 12;
   stroke-linecap: round;
 }
 
-/* Text Styles */
 .level-main-text {
   text-anchor: middle;
   font-size: 36px;
@@ -254,15 +287,13 @@ circle {
 .level-sub-text {
   text-anchor: middle;
   font-size: 16px;
-  fill: #a0aec0;
-  /* Light gray */
+  fill: #d8b2f2;
 }
 
 .level-percent-text {
   text-anchor: middle;
   font-size: 14px;
-  fill: #718096;
-  /* Medium gray */
+  fill: #c0a0e0;
 }
 
 /* audits */
@@ -271,15 +302,13 @@ circle {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 5px;
-  width: 100%; */
 }
 
 .audit-container {
   font-family: 'Courier New', monospace;
   text-align: center;
   padding: 20px;
-  border: 2px solid #0ff;
+  border: 2px solid violet;
   border-radius: 8px;
   background: none;
   width: 300px;
@@ -287,16 +316,15 @@ circle {
 }
 
 .audit-container h2 {
-  color: #0ff;
+  color: violet;
   margin-bottom: 20px;
   font-size: 1.5rem;
-  /* text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); */
 }
 
 .audit-label {
   display: block;
   font-size: 14px;
-  color: #aaa;
+  color: #ccc;
   margin-bottom: 5px;
 }
 
@@ -304,6 +332,7 @@ circle {
   font-size: 18px;
   font-weight: bold;
   display: block;
+  color: violet;
 }
 
 .audit-arrow {
@@ -342,7 +371,7 @@ circle {
   display: flex;
   justify-content: space-between;
   padding: 8px 15px;
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(238, 130, 238, 0.1);
   border-radius: 5px;
 }
 
@@ -351,9 +380,9 @@ circle {
   max-width: 100%;
 }
 
-.audit-arrow, 
-.audit-arrow.down, 
-.audit-delta, 
+.audit-arrow,
+.audit-arrow.down,
+.audit-delta,
 .ratio-message {
   display: none;
 }
@@ -361,17 +390,17 @@ circle {
 /* XP */
 #xp-graph {
   background: none;
-  border: 3px solid;
+  border: 3px solid violet;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(238, 130, 238, 0.2);
   margin-bottom: 20px;
 }
 
 .xp-header h1 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #777777;
+  color: rgb(128, 33, 128);
 }
 
 .xp-summary {
@@ -382,29 +411,30 @@ circle {
 
 .xp-summary .box {
   flex: 1;
-  background: #f5f5f5;
+  background: #2b2b2f;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
+  box-shadow: 0 0 8px rgba(238, 130, 238, 0.2);
 }
 
 .xp-summary .box h4 {
   margin: 0 0 5px 0;
   font-size: 0.9rem;
-  color: #666;
+  color: #ccc;
 }
 
 .xp-summary .box p {
   margin: 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: #fff;
 }
 
 .xp-projects h3 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #838383;
+  color: rgb(128, 33, 128);
 }
 
 .project-list {
@@ -417,14 +447,19 @@ circle {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-top: 1px solid;
+  border-top: 1px solid violet;
 }
 
 .project-name {
-  color: #333;
+  color: #fff;
+}
+
+.project-type {
+    color: violet;
+    font-weight: bold;
 }
 
 .project-size {
-  color: #666;
+  color: #aaa;
   font-weight: bold;
 }
