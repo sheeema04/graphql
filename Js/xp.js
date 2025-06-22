@@ -87,7 +87,7 @@ export function renderXPBoard(transactions) {
     </div>
 
     <div class="xp-projects">
-      <h3>All Activities</h3>
+      <h3>Latest Activities</h3>
       <div class="project-list">
         ${projectList.slice(0, 3).map(project => `
           <div class="project-item">

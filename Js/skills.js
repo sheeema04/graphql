@@ -89,13 +89,12 @@ export async function renderSkills() {
 
         <!-- Skill labels with values -->
         ${labelPoints.map(([x, y], i) => {
-          return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" fill="#00e6e6" font-size="13" font-weight="bold">${labels[i]} (${skills[i]}%)</text>`;
+          return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" fill="violet" font-size="13" font-weight="bold">${labels[i]} (${skills[i]}%)</text>`;
         }).join('')}
       </svg>
     `;
 
     document.getElementById("skills-graph").innerHTML = svg;
-
   } catch (error) {
     console.error("Error fetching skills:", error);
   }
