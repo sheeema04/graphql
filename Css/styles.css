@@ -1,0 +1,430 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0f0f;
+  color: #0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  flex-direction: column;
+}
+
+.login-container {
+  background: #111;
+  padding: 2rem;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #0ff;
+  width: 300px;
+  text-align: center;
+  margin-top: 115px;
+}
+
+.login-container h1 {
+  margin-bottom: 1.5rem;
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 2px solid #0ff;
+  background: transparent;
+  color: #0ff;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid #f0f;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #0ff;
+  border: 2px solid #0ff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  width: 50%;
+}
+
+button:hover {
+  background: #0ff;
+  color: #000;
+}
+
+#error-message {
+  margin-top: 1rem;
+  color: #f55;
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 2px solid #0ff;
+  color: #0ff;
+  width: 85%;
+  /* text-align: center; */
+}
+
+#profile-info p {
+  margin: 4px 0;
+}
+
+#profile-info {
+  display: block;
+}
+
+.horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.wide {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  border-radius: 12px;
+  background-color: #1a1a1a;
+}
+
+#graphs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.header button:hover {
+  background: #0ff;
+  color: #000;
+}
+
+button#logout-btn {
+  background-color: transparent;
+  width: 150px;
+  color: #0ff;
+  font-weight: bold;
+  border: 2px solid #0ff;
+  cursor: pointer;
+
+  margin-top: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button#logout-btn:hover {
+  background-color: rgb(0, 70, 70);
+  color: white;
+}
+
+/* LEVEL */
+
+.level-chart {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.level-chart h3 {
+  color: #0ff;
+  margin-bottom: 1rem;
+}
+
+.level-svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.level-text {
+  font-size: 28px;
+  fill: #0ff;
+  font-weight: bold;
+}
+
+.level-bg {
+  stroke: #333;
+  stroke-width: 10;
+  fill: none;
+}
+
+.level-fg {
+  stroke: #0ff;
+  stroke-width: 10;
+  fill: none;
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+/* SKILLS */
+#skills-graph {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+#skills-graph:hover {
+  transform: scale(1.02);
+}
+
+#skills-graph svg {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+polygon {
+  fill: rgba(173, 216, 230, 0.3);
+  stroke: #00bcd4;
+  stroke-width: 2;
+}
+
+line {
+  stroke: #333;
+  stroke-width: 1;
+}
+
+circle {
+  stroke: #444;
+  stroke-width: 1;
+  fill: none;
+}
+
+/* Level Container */
+.level-container {
+  text-align: center;
+  margin: 20px 0;
+  max-width: 200px;
+}
+
+.level-title {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* SVG Styles */
+.level-svg {
+  width: 200px;
+  height: 220px;
+}
+
+.level-bg-circle {
+  fill: none;
+  stroke: #2d3748;
+  /* Dark gray background */
+  stroke-width: 12;
+}
+
+.level-progress-circle {
+  fill: none;
+  stroke: #38b2ac;
+  /* Teal progress color */
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+/* Text Styles */
+.level-main-text {
+  text-anchor: middle;
+  font-size: 36px;
+  font-weight: bold;
+  fill: #ffffff;
+}
+
+.level-sub-text {
+  text-anchor: middle;
+  font-size: 16px;
+  fill: #a0aec0;
+  /* Light gray */
+}
+
+.level-percent-text {
+  text-anchor: middle;
+  font-size: 14px;
+  fill: #718096;
+  /* Medium gray */
+}
+
+/* audits */
+#audit-graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 5px;
+  width: 100%; */
+}
+
+.audit-container {
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  background: none;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.audit-container h2 {
+  color: #0ff;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  /* text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); */
+}
+
+.audit-label {
+  display: block;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.audit-value {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.audit-arrow {
+  color: #00ff00;
+  font-size: 14px;
+}
+
+.audit-arrow.down {
+  color: #ff0000;
+}
+
+.audit-delta {
+  font-size: 12px;
+  color: #00ff00;
+  display: block;
+}
+
+.audit-ratio {
+  margin-top: 20px;
+}
+
+.ratio-value {
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+}
+
+.audit-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.audit-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.audit-container svg {
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.audit-arrow, 
+.audit-arrow.down, 
+.audit-delta, 
+.ratio-message {
+  display: none;
+}
+
+/* XP */
+#xp-graph {
+  background: none;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.xp-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #777777;
+}
+
+.xp-summary {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.xp-summary .box {
+  flex: 1;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.xp-summary .box h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.xp-summary .box p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.xp-projects h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #838383;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid;
+}
+
+.project-name {
+  color: #333;
+}
+
+.project-size {
+  color: #666;
+  font-weight: bold;
+}
