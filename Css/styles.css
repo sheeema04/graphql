@@ -9,6 +9,7 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #0f0f0f;
+  color: #0ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +37,7 @@ body {
     -10px 0 60px violet,
     10px 0 60px blue;
   z-index: 0;
-  animation: float 4s ease-in-out infinite; 
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -48,7 +49,6 @@ body {
 }
 
 .login-container h1 {
-  margin-bottom: 20px;
   color: white;
   text-align: center;
   font-family: Cursive;
@@ -138,7 +138,6 @@ button:hover {
   justify-content: center;
   gap: 20px;
   padding: 30px;
-
   align-items: center;
   margin: 30px auto;
 }
@@ -164,8 +163,6 @@ button#logout-btn:hover {
   background-color: #4b0082;
   color: white;
 }
-
-/* LEVEL */
 
 .level-chart {
   margin: 2rem 0;
@@ -201,7 +198,6 @@ button#logout-btn:hover {
   transition: stroke-dashoffset 0.4s ease;
 }
 
-/* SKILLS */
 #skills-graph {
   background-color: #1b1b1f;
   border-radius: 12px;
@@ -246,7 +242,6 @@ circle {
   fill: none;
 }
 
-/* Level Container */
 .level-container {
   text-align: center;
   margin: 20px 0;
@@ -296,7 +291,6 @@ circle {
   fill: #c0a0e0;
 }
 
-/* audits */
 #audit-graph {
   display: flex;
   flex-direction: column;
@@ -387,7 +381,6 @@ circle {
   display: none;
 }
 
-/* XP */
 #xp-graph {
   background: none;
   border: 3px solid violet;
@@ -455,11 +448,86 @@ circle {
 }
 
 .project-type {
-    color: violet;
-    font-weight: bold;
+  color: violet;
+  font-weight: bold;
 }
 
 .project-size {
   color: #aaa;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 350px;
+    height: 350px;
+    padding: 50px;
+  }
+
+  .wide, #graphs, .skills-section {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 10px !important;
+    width: 100% !important;
+  }
+
+  .horizontal {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skills-heading {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .audit-container {
+    width: 90%;
+  }
+
+  .xp-summary {
+    flex-direction: column;
+  }
+
+  .project-list {
+    gap: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .level-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 260px;
+    height: 260px;
+    padding: 40px;
+  }
+
+  h1, .skills-heading, .wide h2, .xp-header h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .xp-summary .box p {
+    font-size: 1rem;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
 }
