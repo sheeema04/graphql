@@ -71,7 +71,7 @@ export async function renderSkills() {
     const polygon = points.map(p => p.join(",")).join(" ");
 
     const svg = `
-      <svg width="500" height="350" viewBox="-20 -30 310 365">
+      <svg viewBox="-30 -30 380 380" preserveAspectRatio="xMidYMid meet">
         <!-- Background grid circles (10 rings = 10% each) -->
         ${Array.from({ length: 10 }, (_, i) => {
           const r = radius * (i + 1) / 10;
@@ -95,7 +95,9 @@ export async function renderSkills() {
     `;
 
     document.getElementById("skills-graph").innerHTML = svg;
+
   } catch (error) {
     console.error("Error fetching skills:", error);
   }
 }
+`qqqqqqq`
